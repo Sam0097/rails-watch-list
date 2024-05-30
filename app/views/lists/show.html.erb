@@ -1,0 +1,12 @@
+<h1 class="border-bottom p-2"><%= @list.name %></h1>
+<% @list.bookmarks.each do |bookmark| %>
+<div class="card-product">
+<ul><%= bookmark.movie.title %>
+<p><%= bookmark.movie.overview %></p>
+</div>
+<%= link_to "Delete Bookmark", list_bookmark_path(@list, bookmark),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-primary m-2" %></ul>
+<% end %>
+
+<%= link_to "Create new Bookmark", new_list_bookmark_path(@list.id), class:"btn btn-primary m-1" %>
+<%= link_to "Back to Lists", lists_path(@list), class:"btn btn-primary" %>

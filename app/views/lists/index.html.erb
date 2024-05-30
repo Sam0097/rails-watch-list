@@ -1,0 +1,12 @@
+<h1 class="border-bottom p-2">Movies List</h1>
+<div class="container d-flex flex-wrap justify-content-center">
+<% @list.each do |list| %>
+<%= link_to list_path(list) do %>
+<div class="card d-flex m-1 justify-content-center btn btn-primary " style="width: 18rem; height: 18rem;">
+<li type="button" role="button" class="flex-container"><%= list.name %>
+ </li>
+</div>
+<% end %>
+<% end %>
+</div>
+<%= link_to "Create new List", new_list_path, class:" m-2 btn btn-primary" %>
